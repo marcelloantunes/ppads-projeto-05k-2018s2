@@ -8,7 +8,7 @@
 
 ## Como as pessoas/empresas vão usar este software?
 
-1. User entra no site e obrigatoriamente, deve se registrar ou logar.
+1. User entra no site e obrigatoriamente, deve se cadastrar para poder registrar pet, mas não obrigatoriamente deve logar para realizar as consultas.
 2. Na barra de menu, o user pode consultar o catalogo de pets para adoção.
 3. User pode registrar o pet disponível para adoção com todas as informações necessárias e o contato.
 4. User pode localizar hotéis para pet e veterinários dado a localização, seja por input de busca ou através da localização do user.
