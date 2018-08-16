@@ -4,7 +4,7 @@
 
 ## Principais funcionalidades (o que pessoas/empresas vão conseguir com este software?):
 
-* Informações para bichos de estimação em geral (como adoção, petshops, hotéis e outros itens a serem definidos)
+* Informações para bichos de estimação em geral (a princípio, funções informativos sobre adoção; localização de petshops e hotéis próximos a localização do user e outros itens a serem alinhados e definidos conforme andamento do projeto).
 
 ## Como as pessoas/empresas vão usar este software?
 
