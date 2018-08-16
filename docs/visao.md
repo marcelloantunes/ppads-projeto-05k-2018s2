@@ -8,9 +8,10 @@
 
 ## Como as pessoas/empresas vão usar este software?
 
-1. Menu de opções com as categorias listadas acima.
-2. Barra de busca no topo da página.
-3. Locais marcados em mapa de acordo com geolocalização do usuário.
+1. User entra no site e obrigatoriamente, deve se registrar ou logar.
+2. Na barra de menu, o user pode consultar o catalogo de pets para adoção.
+3. User pode registrar o pet disponível para adoção com todas as informações necessárias e o contato.
+4. User pode localizar hotéis para pet e veterinários dado a localização, seja por input de busca ou através da localização do user.
 
 ## Quais linguagens/tecnologias serão utilizadas para implementar este software?
 
