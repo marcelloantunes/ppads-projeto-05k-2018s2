@@ -13,6 +13,8 @@
 3. User pode registrar o pet disponível para adoção com todas as informações necessárias e o contato.
 4. User pode localizar hotéis para pet e veterinários dado a localização, seja por input de busca ou através da localização do user.
 
+*Essas funcionalidades ainda serão alinhados e são mutáveis.
+
 ## Quais linguagens/tecnologias serão utilizadas para implementar este software?
 
 * HTML / CSS / Boostrap
