@@ -1,14 +1,14 @@
 # Casos de uso
 
 ## CDU001
-Nome : Realizar cadastro
-Atores :	Usuário
-Sumário	: O usuário quer registrar um anúncio mas para isso é necessário se cadastrar na aplicação.
-Regras de Negócio :	N/D
-Pré-condições	: N/D
-Pós-condição : Armazenar os dados
-Pontos de Inclusão :	N/D
-Pontos de Extensão :	N/D
+Nome : Realizar cadastro  
+Atores :	Usuário  
+Sumário	: O usuário quer registrar um anúncio mas para isso é necessário se cadastrar na aplicação.  
+Regras de Negócio :	N/D  
+Pré-condições	: N/D  
+Pós-condição : Armazenar os dados  
+Pontos de Inclusão :	N/D  
+Pontos de Extensão :	N/D  
 
 ### Fluxo Principal
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
@@ -20,14 +20,14 @@ Pontos de Extensão :	N/D
 |6.User pode se logar usando o usuário e senha cadastrados.        |                                                                   |
 
 ## CDU002
-Nome : Consultar veterinários 
-Atores :	Usuário
-Sumário	: O usuário quer consultar algum veterinário próximo a sua localização.
-Regras de Negócio :	N/D
-Pré-condições	: N/D
-Pós-condição : N/D
-Pontos de Inclusão :	N/D
-Pontos de Extensão :	N/D
+Nome : Consultar veterinários  
+Atores :	Usuário  
+Sumário	: O usuário quer consultar algum veterinário próximo a sua localização.  
+Regras de Negócio :	N/D  
+Pré-condições	: N/D  
+Pós-condição : N/D  
+Pontos de Inclusão :	N/D  
+Pontos de Extensão :	N/D  
 
 ### Fluxo Principal
 |                        Ações do Ator	                           |                          Ações do Sistema                         |
@@ -41,14 +41,14 @@ Pontos de Extensão :	N/D
 
 ## CDU003
 
-Nome : Registro de adoção
-Atores :	Usuário
-Sumário	: O usuário quer colocar seus filhotes para adoção
-Regras de Negócio :	N/D
-Pré-condições	: Estar logado na aplicação
-Pós-condição : N/D
-Pontos de Inclusão :	N/D
-Pontos de Extensão :	N/D
+Nome : Registro de adoção  
+Atores :	Usuário  
+Sumário	: O usuário quer colocar seus filhotes para adoção  
+Regras de Negócio :	N/D  
+Pré-condições	: Estar logado na aplicação  
+Pós-condição : N/D  
+Pontos de Inclusão :	N/D  
+Pontos de Extensão :	N/D  
 
 ### Fluxo Principal
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
