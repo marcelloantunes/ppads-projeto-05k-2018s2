@@ -30,13 +30,14 @@ Pontos de Inclusão :	N/D
 Pontos de Extensão :	N/D  
 
 ### Fluxo Principal
-|                        Ações do Ator	                           |                          Ações do Sistema                         |
-|------------------------------------------------------------------|-------------------------------------------------------------------|
-|1.Acessa o módulo de consulta.                                    |                                                                   |
-|                                                                  |2.Solicita permissão para utilizar o localizador gps.              |
-|3.Permite que o sistema tenha acesso ao localizador.              |                                                                   |
-|                                                                  |4.Mostra todos os veterinários próximos ao user.                   |
-|5.Seleciona algum veterinário para obter mais informações.        |                                                                   |
+|                        Ações do Ator	                          |                          Ações do Sistema                         |
+|-----------------------------------------------------------------|-------------------------------------------------------------------|
+|1.Acessa o módulo de consulta.                                   |                                                                   |
+|                                                                 |2.Solicita permissão para utilizar o localizador gps.              |
+|3.Permite que o sistema tenha acesso ao localizador.             |                                                                   |
+|                                                                 |4.Sistema acessa base de dados do Google Maps através de API próprio|
+|                                                                 |5.Mostra todos os veterinários próximos ao user.                   |
+|6.Seleciona algum veterinário para obter mais informações.       |                                                                   |
 
 
 ## CDU003
