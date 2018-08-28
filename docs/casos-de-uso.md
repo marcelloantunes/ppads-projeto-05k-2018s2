@@ -20,7 +20,7 @@ Pontos de Extensão :	N/D
 |6.User pode se logar usando o usuário e senha cadastrados.        |                                                                   |
 
 
-### Fluxo de Exceção 1
+### Fluxo de Exceção #1
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere os dados solicitados porém não válidos.                  |                                                                   |
@@ -28,14 +28,14 @@ Pontos de Extensão :	N/D
 |                                                                  | 3.Apresenta uma mensagem de erro ao usuário.                      | |                                                                  | 4.O sistema limpa o(s) campo(s) errado(s).                        |
 |                                                                  | 5.O fluxo volta ao passo 1 do Fluxo Principal                     |
 
-### Fluxo Alternativo 1
+### Fluxo Alternativo #1
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere os dados solicitados.                                    |                                                                   |
 |2.Clica no botão cancelar                                         |                                                                   |
 |                                                                  | 3.Volta a tela inicial.                                           |
 
-### Fluxo Alternativo 2
+### Fluxo Alternativo #2
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere os dados solicitados.                                    |                                                                   |
