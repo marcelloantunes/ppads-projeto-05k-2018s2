@@ -5,7 +5,7 @@ Nome : Realizar cadastro
 Atores :	Usuário  
 Sumário	: O usuário quer registrar um anúncio mas para isso é necessário se cadastrar na aplicação.  
 Regras de Negócio :	N/D  
-Pré-condições	: N/D  
+Pré-condições	: O usuário não deve estar conectado à uma conta  
 Pós-condição : Armazenar os dados  
 Pontos de Inclusão :	N/D  
 Pontos de Extensão :	N/D  
@@ -18,6 +18,31 @@ Pontos de Extensão :	N/D
 |                                                                  | 3.Valida o preenchimento dos dados obrigatórios.                  | |                                                                  | 4.Gera uma chave primária pro user e armazena no banco.           |
 |                                                                  | 5.Apresenta na tela, confirmação da realização docadastro.        |
 |6.User pode se logar usando o usuário e senha cadastrados.        |                                                                   |
+
+
+### Fluxo Alternativo 1
+|                         Ações do Ator	                           |                          Ações do Sistema                         |
+-------------------------------------------------------------------|--------------------------------------------------------------------
+|1.Insere os dados solicitados porém não válidos.                  |                                                                   |
+|                                                                  | 2.Valida o tipo dos dados inseridos.                              |
+|                                                                  | 3.Apresenta uma mensagem de erro ao usuário.                      | |                                                                  | 4.O sistema limpa o(s) campo(s) errado(s).                        |
+|                                                                  | 5.O fluxo volta ao passo 1 do Fluxo Principal                     |
+
+### Fluxo Alternativo 2
+|                         Ações do Ator	                           |                          Ações do Sistema                         |
+-------------------------------------------------------------------|--------------------------------------------------------------------
+|1.Insere os dados solicitados.                                    |                                                                   |
+|2.Clica no botão cancelar                                         |                                                                   |
+|                                                                  | 3.Volta a tela inicial.                                           |
+
+### Fluxo Alternativo 3
+|                         Ações do Ator	                           |                          Ações do Sistema                         |
+-------------------------------------------------------------------|--------------------------------------------------------------------
+|1.Insere os dados solicitados.                                    |                                                                   |
+|2.Clica no botão voltar do browser                                |                                                                   |
+|                                                                  | 3.Volta a tela inicial.                                           |
+
+
 
 ## CDU002
 Nome : Consultar veterinários  
