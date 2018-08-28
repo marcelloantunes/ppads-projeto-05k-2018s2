@@ -7,3 +7,4 @@
 * Tonny Lee
 * Allan Yuji Ishihara
 * Karina Apolinario
+* Leonardo Romito
