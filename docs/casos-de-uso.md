@@ -13,11 +13,15 @@ Pontos de Extensão :	N/D
 ### Fluxo Principal
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
-|1.Insere os dados solicitados.                                    |                                                                   |
-|                                                                  | 2.Valida o tipo dos dados inseridos.                              |
-|                                                                  | 3.Valida o preenchimento dos dados obrigatórios.                  | |                                                                  | 4.Gera uma chave primária pro user e armazena no banco.           |
-|                                                                  | 5.Apresenta na tela, confirmação da realização docadastro.        |
-|6.User pode se logar usando o usuário e senha cadastrados.        |                                                                   |
+|1.Insere o nome em campo obrigatório                              |                                                                   |
+|                                                                 | 2.Valida o tipo dos dados inseridos através de Expressões Regulares|
+|3.Insere o e-mail em campo obrigatório                           |                                                                   |
+|                                                                 | 4.Valida o tipo dos dados inseridos através de Expressões Regulares|
+|5.Insere uma senha em campo obrigatório                                                                                          |
+|                                                                 | 6.Valida o tipo dos dados inseridos através de Expressões Regulares|
+|                                                                  | 7.Gera uma chave primária pro user e armazena no banco.           |
+|                                                                  | 8.Apresenta na tela, confirmação da realização docadastro.        |
+|9.User pode se logar usando o e-mail e a senha cadastrados.        |                                                                   |
 
 
 ### Fluxo de Exceção #1
