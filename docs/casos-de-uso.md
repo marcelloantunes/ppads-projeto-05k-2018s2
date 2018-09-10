@@ -35,17 +35,12 @@ Pontos de Extensão :	N/D
 ### Fluxo Alternativo #1
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
-|1.Insere os dados solicitados.                                    |                                                                   |
-|2.Clica no botão cancelar                                         |                                                                   |
-|                                                                  | 3.Volta a tela inicial.                                           |
-
-### Fluxo Alternativo #2
-|                         Ações do Ator	                           |                          Ações do Sistema                         |
--------------------------------------------------------------------|--------------------------------------------------------------------
-|1.Insere os dados solicitados.                                    |                                                                   |
-|2.Clica no botão voltar do browser                                |                                                                   |
-|                                                                  | 3.Volta a tela inicial.                                           |
-
+|1.Insere os dados solicitados do Fluxo Principal.                 |                                                                   |
+|2.Insere dados opcionais como Nome do Pet, Raça, Idade            |                                                                   |
+|                                                          | 3.Valida o tipo dos dados inseridos através de Expressões Regulares.      |
+|                                                                  | 4.Gera uma chave primária pro user e armazena no banco.           |
+|                                                                  | 5.Apresenta na tela, confirmação da realização docadastro.        |
+|6.User pode se logar usando o e-mail e a senha cadastrados.       |      |                        
 
 
 ## CDU002
@@ -71,9 +66,9 @@ Pontos de Extensão :	N/D
 
 ## CDU003
 
-Nome : Registro de adoção  
+Nome : Interação do "Petgram"  
 Atores :	Usuário  
-Sumário	: O usuário quer colocar seus filhotes para adoção  
+Sumário	: O usuário quer interagir nas fotos de outros pets como dar like/comentar  
 Regras de Negócio :	N/D  
 Pré-condições	: Estar logado na aplicação  
 Pós-condição : N/D  
@@ -81,10 +76,12 @@ Pontos de Inclusão :	N/D
 Pontos de Extensão :	N/D  
 
 ### Fluxo Principal
-|                         Ações do Ator	                           |                          Ações do Sistema                         |
-|------------------------------------------------------------------|-------------------------------------------------------------------|
-|1.Acessa o módulo de adoção.                                      |                                                                   |
-|                                                                  |2.Indica os campos obrigatórios como fotos, cidade, contato e etc. |
-|3.Insere todos os campos obrigatórios.                            |                                                                   |
-|4.Conclui o registro.                                             |                                                                   |
-|                                                                  |5.Sistema insere a adoção no "classificado".                       |
+|                         Ações do Ator	                           |           Ações do Sistema                   |
+|------------------------------------------------------------------|----------------------------------------------|
+|1.Acessa o módulo de Petgram.                                     |                                              |
+|                                                                  |2.Mostra um feed com fotos de pets            |
+|3.Interage dando like.                                            |                                              |
+|                                                                  |4.Salva o like na foto.                       |
+|5.Interage comentando na foto.                                    |                                              |
+|                                                                  |6.Salva o comentário na foto e deixar visível |
+
