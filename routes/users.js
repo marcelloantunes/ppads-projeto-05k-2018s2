@@ -34,9 +34,11 @@ router.post('/register', function (req, res) {
 	var errors = req.validationErrors();
 
 	if (errors) {
-		res.render('register', {
+		req.flash('error_msg', 'BLA com sucesso');
+		res.redirect('login');
+		/* res.render('login', {
 			errors: errors
-		});
+		}); */
 	}
 	else {
 		//checking for email and username are already taken
@@ -63,7 +65,7 @@ router.post('/register', function (req, res) {
 						if (err) throw err;
 						console.log(user);
 					});
-         	req.flash('success_msg', 'You are registered and can now login');
+         	req.flash('success_msg', 'Cadastro feito com sucesso');
 					res.redirect('/users/login');
 				}
 			});
@@ -76,15 +78,14 @@ passport.use(new LocalStrategy(
 		User.getUserByUsername(username, function (err, user) {
 			if (err) throw err;
 			if (!user) {
-				return done(null, false, { message: 'Unknown User' });
+				return done(null, false, { message: 'Usuário inválido' });
 			}
-
 			User.comparePassword(password, user.password, function (err, isMatch) {
 				if (err) throw err;
 				if (isMatch) {
 					return done(null, user);
 				} else {
-					return done(null, false, { message: 'Invalid password' });
+					return done(null, false, { message: 'Senha inválida' });
 				}
 			});
 		});
