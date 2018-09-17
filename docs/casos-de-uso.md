@@ -14,14 +14,14 @@ Pontos de Extensão :	N/D
 |                         Ações do Ator	                           |                          Ações do Sistema                         |
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere o nome em campo obrigatório                              |                                                                   |
-|                                                                 | 2.Valida o tipo dos dados inseridos através de Expressões Regulares|
+|                                                                 | 2.Valida o tipo dos dados inseridos.|
 |3.Insere o e-mail em campo obrigatório                           |                                                                   |
-|                                                                 | 4.Valida o tipo dos dados inseridos através de Expressões Regulares|
+|                                                                 | 4.Valida o tipo dos dados inseridos.|
 |5.Insere uma senha em campo obrigatório                                                                                          |
-|                                                                 | 6.Valida o tipo dos dados inseridos através de Expressões Regulares|
-|                                                                  | 7.Gera uma chave primária pro user e armazena no banco.           |
-|                                                                  | 8.Apresenta na tela, confirmação da realização docadastro.        |
-|9.User pode se logar usando o e-mail e a senha cadastrados.        |                                                                   |
+|                                                                 | 6.Valida o tipo dos dados inseridos.|
+|                                                                  | 7.Armazena dados com sucesso.           |
+|                                                                  | 8.Apresenta na tela, confirmação da realização do cadastro.        |
+|9.User pode logar usando o e-mail e a senha cadastrados.        |                                                                   |
 
 
 ### Fluxo de Exceção #1
@@ -37,8 +37,8 @@ Pontos de Extensão :	N/D
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere os dados solicitados do Fluxo Principal.                 |                                                                   |
 |2.Insere dados opcionais como Nome do Pet, Raça, Idade            |                                                                   |
-|                                                          | 3.Valida o tipo dos dados inseridos através de Expressões Regulares.      |
-|                                                                  | 4.Gera uma chave primária pro user e armazena no banco.           |
+|                                                          | 3.Valida o tipo dos dados inseridos.      |
+|                                                                  | 4.Armazena os dados no banco.           |
 |                                                                  | 5.Apresenta na tela, confirmação da realização docadastro.        |
 |6.User pode se logar usando o e-mail e a senha cadastrados.       |      |                        
 
