@@ -1,10 +1,15 @@
-/* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-image: linear-gradient( 135deg, #70F570 10%, #3363AE 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* color: #35B729; */
+  /* background-color: #A8A8A8; */
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
@@ -12,36 +17,33 @@ body {
   padding-left: 15px;
 }
 
-/* Custom page header */
 .header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
-/* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
 }
 
-/* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
-/* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    /* max-width: 730px; */
+    width: 100%;
   }
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -51,7 +53,6 @@ body {
   font-size: 21px;
 }
 
-/* Supporting marketing content */
 .marketing {
   margin: 40px 0;
 }
@@ -59,25 +60,25 @@ body {
   margin-top: 28px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
+
+/* @media screen and (min-width: 768px) {
+  
   .header,
   .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;
   }
-  /* Space out the masthead */
+  
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
+  
   .jumbotron {
     border-bottom: 0;
   }
 }
-
+ */
 .page-header{
   margin-top:0;
 }
@@ -85,3 +86,158 @@ body {
 footer{
   margin-top:40px;
 }
+
+/* <------------------------------------------------------> */
+
+.container2{
+  /*border:1px solid white;*/
+  width: 600px;
+  height: 600px;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex; 
+}
+
+.backbox{  
+  background-color: #767676;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  transform: translate(0,-50%);
+  top:50%;
+  display: inline-flex;
+}
+
+.frontbox{
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+  position: absolute;
+  right:0;
+  margin-right: 3%;
+  margin-left: 3%;
+  transition: right .8s ease-in-out;
+}
+
+.moving{
+  right:45%;
+}
+
+.loginMsg, .signupMsg{
+  width: 50%;
+  height: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.loginMsg .title,
+.signupMsg .title{
+  font-weight: 300;
+  font-size: 23px;
+}
+
+.loginMsg p,
+.signupMsg p {
+  font-weight: 100;
+}
+
+.textcontent{
+  color:white;
+  margin-top:65px;
+  margin-left: 12%;
+}
+
+.loginMsg button,
+.signupMsg button {
+  color: #fff;
+  background-image: linear-gradient( 135deg, #7F7E7E 10%, #767676 100%);
+  box-shadow: 0px 4px 20px 0px #767676a6;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 14px;
+  box-sizing: content-box;
+  font-weight: 300;
+  padding:10px;
+  margin-top: 20px;
+  min-width: 60px;
+  cursor: pointer;
+  padding: 10px 30px;
+  font-weight: 300;
+}
+
+/* front box content*/
+.login, .signup{
+  padding: 20px;
+  text-align: center;
+}
+
+.login h2,
+.signup h2 {
+  color: #517CC0;
+  font-size: 22px;
+}
+
+.inputbox{
+  margin-top:30px; 
+}
+
+.login input, 
+.signup input,
+.signup select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #f2f2f2;
+  border: none;
+  margin-bottom:20px;
+  font-size: 12px;
+}
+
+/* button {
+  float: right;
+} */
+
+.login button,
+.signup button{
+  color: #fff;
+  background-image: linear-gradient( 135deg, #7B9ED6 10%, #3363AE 100%);
+  box-shadow: 0px 4px 20px 0px #3363AEa6;
+  border: 0; outline: 0;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 50px;
+  padding: 12px 35px;
+  font-weight: 300;
+  box-sizing: content-box;
+  min-width: 60px;
+  position: absolute;
+  right:30px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+/* Fade In & Out*/
+.login p {
+  cursor: pointer;
+  color:#404040;
+  font-size:15px;
+}
+
+.loginMsg, .signupMsg{
+  /*opacity: 1;*/
+  transition: opacity .8s ease-in-out;
+}
+
+.visibility{
+  opacity: 0;
+}
+
+.hide{
+  display: none;
+}
+
+

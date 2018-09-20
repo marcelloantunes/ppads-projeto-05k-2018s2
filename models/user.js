@@ -15,6 +15,15 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
+<<<<<<< HEAD
+=======
+	},
+	petName: {
+		type: String
+	},
+	petGroup: {
+		type: String
+>>>>>>> front
 	}
 });
 

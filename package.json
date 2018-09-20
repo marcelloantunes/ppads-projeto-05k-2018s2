@@ -1,13 +1,23 @@
 {
+<<<<<<< HEAD
   "name": "petgram",
   "version": "1.0.0",
   "description": "petgram",
+=======
+  "name": "loginapp",
+  "version": "1.0.0",
+  "description": "Simple authentication system",
+>>>>>>> front
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "author": "Marcello",
+=======
+  "author": "Brad Traversy",
+>>>>>>> front
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "*",
@@ -21,7 +31,10 @@
     "express-validator": "*",
     "mongodb": "*",
     "mongoose": "*",
+<<<<<<< HEAD
     "nodemon": "^1.18.4",
+=======
+>>>>>>> front
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*"
