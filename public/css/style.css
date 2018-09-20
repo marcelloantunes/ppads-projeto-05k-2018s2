@@ -1,7 +1,12 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #A8A8A8;
+  background-image: linear-gradient( 135deg, #70F570 10%, #3363AE 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* color: #35B729; */
+  /* background-color: #A8A8A8; */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -89,7 +94,7 @@ footer{
 .container2{
   /*border:1px solid white;*/
   width: 600px;
-  height: 580px;
+  height: 600px;
   position: fixed;
   top:50%;
   left:50%;
@@ -98,7 +103,7 @@ footer{
 }
 
 .backbox{  
-  background-color: #404040;
+  background-color: #767676;
   width: 100%;
   height: 80%;
   position: absolute;
@@ -150,15 +155,20 @@ footer{
 
 .loginMsg button,
 .signupMsg button {
-  background-color: #404040;
+  color: #fff;
+  background-image: linear-gradient( 135deg, #7F7E7E 10%, #767676 100%);
+  box-shadow: 0px 4px 20px 0px #767676a6;
   border: 2px solid white;
-  border-radius: 10px;
-  color:white;
-  font-size: 12px;
+  border-radius: 50px;
+  font-size: 14px;
   box-sizing: content-box;
   font-weight: 300;
   padding:10px;
   margin-top: 20px;
+  min-width: 60px;
+  cursor: pointer;
+  padding: 10px 30px;
+  font-weight: 300;
 }
 
 /* front box content*/
@@ -169,8 +179,8 @@ footer{
 
 .login h2,
 .signup h2 {
-  color: #35B729;
-  font-size:22px;
+  color: #517CC0;
+  font-size: 22px;
 }
 
 .inputbox{
@@ -178,7 +188,8 @@ footer{
 }
 
 .login input, 
-.signup input {
+.signup input,
+.signup select {
   display: block;
   width: 100%;
   height: 40px;
@@ -195,8 +206,8 @@ footer{
 .login button,
 .signup button{
   color: #fff;
-  background-image: linear-gradient( 135deg, #70F570 10%, #49C628 100%);
-  box-shadow: 0px 4px 20px 0px #49c628a6;
+  background-image: linear-gradient( 135deg, #7B9ED6 10%, #3363AE 100%);
+  box-shadow: 0px 4px 20px 0px #3363AEa6;
   border: 0; outline: 0;
   display: inline-block;
   font-size: 14px;

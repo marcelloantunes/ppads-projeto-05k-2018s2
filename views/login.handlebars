@@ -5,7 +5,7 @@
         <div class="textcontent">
           <p class="title">Não tem uma conta?</p>
           <p>Cadastre-se e comece a usar.</p>
-          <button id="switch1" class="btn btn-default">Cadastrar</button>
+          <button id="switch1" class="loginButton">Cadastrar</button>
         </div>
       </div>
       <div class="signupMsg visibility">
@@ -34,7 +34,7 @@
           {{/if}}
           {{#if errors}}
             {{#each errors}}
-              <p class="alert alert-danger">{{msg}}</p>
+              <p class="alert alert-danger" style="padding: 5px; margin-bottom: 10px;">{{msg}}</p>
             {{/each}}
           {{/if}}
           <button type="submit" class="btn btn-default">Entrar</button>
@@ -42,21 +42,27 @@
       </form>
       <form method="post" action="/users/register">
         <div class="signup hide">
-          <h2>SIGN UP</h2>
+          <h2>CADASTRO</h2>
           <div class="inputbox">
             <input type="text" class="form-control" placeholder="Nome" name="name">
             <input type="text" class="form-control" placeholder="Usuário" name="username">
             {{#if user}}
-              {{!-- <p class="alert alert-danger">USUARIO BLA BLA BLA</p>  --}}
-              <div class="invalid-feedback">Please provide a valid city.</div>
+              <div class="invalid-feedback">Por favor informe nome de usuário.</div>
             {{/if}}
             <input type="email" class="form-control" placeholder="E-mail" name="email">
             {{#if mail}}
-                {{!-- <div class="alert alert-danger">Email has taken already try new</div>  --}}
                 <div class="invalid-feedback">E-mail já cadastrado</div>
-            {{/if}} 
+            {{/if}}
             <input type="password" class="form-control" placeholder="Senha" name="password">
             <input type="password" class="form-control" placeholder="Confirmar Senha" name="password2">
+            <input type="text" class="form-control" placeholder="Nome do Pet" name="petName">
+            <select class="form-control" name="petGroup">
+              <option>Cachorro</option>
+              <option>Gato</option>
+              <option>Pássaro</option>
+              <option>Peixe</option>
+              <option>Outro</option>
+            </select>
           </div>
           {{!-- {{#if errors}}
             {{#each errors}}
@@ -64,7 +70,7 @@
             {{/each}}
           {{/if}} --}}
 
-          <button type="submit" class="btn btn-default">Cadastrar</button>
+          <button class="loginButton" type="submit">Cadastrar</button>
         </div>
       </form>
     </div>

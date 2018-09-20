@@ -22,6 +22,8 @@ router.post('/register', function (req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
+	var petName = req.body.petName;
+	var petGroup = req.body.petGroup;
 
 	// Validation
 	req.checkBody('name', 'Campo Nome é obrigatório').notEmpty();
@@ -60,7 +62,9 @@ router.post('/register', function (req, res) {
 						name: name,
 						email: email,
 						username: username,
-						password: password
+						password: password,
+						petName: petName,
+						petGroup: petGroup
 					});
 					User.createUser(newUser, function (err, user) {
 						if (err) throw err;
@@ -111,7 +115,7 @@ router.post('/login',
 router.get('/logout', function (req, res) {
 	req.logout();
 
-	req.flash('success_msg', 'You are logged out');
+	req.flash('success_msg', 'Usuário desconectado');
 
 	res.redirect('/users/login');
 });

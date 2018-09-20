@@ -15,6 +15,12 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
+	},
+	petName: {
+		type: String
+	},
+	petGroup: {
+		type: String
 	}
 });
 
