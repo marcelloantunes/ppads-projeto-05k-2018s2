@@ -63,6 +63,31 @@ Pontos de Extensão :	N/D
 |                                                                 |5.Mostra todos os veterinários próximos ao user.                   |
 |6.Seleciona algum veterinário para obter mais informações.       |                                                                   |
 
+### Fluxo Alternativo #1
+|                         Ações do Ator	                           |                          Ações do Sistema                         |
+-------------------------------------------------------------------|--------------------------------------------------------------------
+|1.Acessa o módulo de consulta.                                    |                                                                   |
+|                                                                  |2.Solicita permissão para utilizar o localizador gps.              |
+|3.Recusa o acesso do localizador.                                 |                                                                   |
+|                                                                  |4.Pede ao usuario para que entre com um endereço                   |
+|5. Digita o endereço.                                             |                                                                   |
+|                                                                  |6.Sistema acessa base de dados do Google Maps através de API próprio  |                                                                  |7.Mostra todos os veterinários próximos ao user.                   |
+|8.Seleciona algum veterinário para obter mais informações.        |                                                                   |
+
+### Fluxo Alternativo #2  
+|                         Ações do Ator	                     |                          Ações do Sistema                         |
+-------------------------------------------------------------|--------------------------------------------------------------------
+|1.Acessa o módulo de consulta.                              |                                                                   |
+|                                                            |2.Solicita permissão para utilizar o localizador gps.              |
+|3.Recusa o acesso do localizador.                           |                                                                   |
+|                                                            |4.Pede ao usuario para que entre com um endereço                   |
+|5. Digita um endereço invalido                              |                                                                   |
+|                                                            |6.Sistema acessa base de dados do Google Maps através de API próprio.
+|                                                            |7. Informa que o endereço é invalido, pede para digitar novamente.         |8. Digita um endereço valido                                |                                                                    |
+|                                                            |9.Sistema acessa base de dados do Google Maps através de API próprio.|
+|                                                            | 10. Mostra todos os veterinários próximos ao user.                 |
+| 11.Seleciona algum veterinário para obter mais informações.|                                                                    |
+
 
 ## CDU003
 
