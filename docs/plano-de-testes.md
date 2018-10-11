@@ -1,4 +1,4 @@
-| ##CASO NO	01:   –  #Realizar acesso ao Petgram                                                                                          |
+ CASO NO	01:   –  #Realizar acesso ao Petgram                                                                                          
 ---------------------------------------------------------------------------------------------------------------------------------------
 |                                                                                                                                         |
 |OBJETIVO DO TESTE:	Verificar se o usuário consegue efetuar o login.                                                                      |
@@ -12,7 +12,7 @@
 |CRITÉRIOS DE ÊXITO:	O usuário deve conseguir logar no site Petgram. (O Banco de dados do sistema precisa estar funcionando corretamente) |
  
 
-| ##CASO NO	02:   –  #Pesquisar Veterinarios                                                                                              |
+ CASO NO	02:   –  #Pesquisar Veterinarios                                                                                              
 ---------------------------------------------------------------------------------------------------------------------------------------
 |                                                                                                                                         |
 |OBJETIVO DO TESTE:	Verificar se o usuário consegue pesquisar veterinarios proximos a ele atraves da API Google.                          |
