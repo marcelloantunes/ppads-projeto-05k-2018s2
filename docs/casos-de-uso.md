@@ -3,7 +3,7 @@
 ## CDU001
 Nome : Realizar cadastro  
 Atores :	Usuário  
-Sumário	: O usuário quer registrar um anúncio mas para isso é necessário se cadastrar na aplicação.  
+Sumário	: O usuário quer interagir na aplicação mas para isso é necessário se cadastrar na aplicação.  
 Regras de Negócio :	N/D  
 Pré-condições	: O usuário não deve estar conectado à uma conta  
 Pós-condição : Armazenar os dados  
@@ -37,18 +37,18 @@ Pontos de Extensão :	N/D
 -------------------------------------------------------------------|--------------------------------------------------------------------
 |1.Insere os dados solicitados do Fluxo Principal.                 |                                                                   |
 |2.Insere dados opcionais como Nome do Pet, Raça, Idade            |                                                                   |
-|                                                          | 3.Valida o tipo dos dados inseridos.      |
-|                                                                  | 4.Armazena os dados no banco.           |
+|                                                                  | 3.Valida o tipo dos dados inseridos.                              |
+|                                                                  | 4.Armazena os dados no banco.                                     |
 |                                                                  | 5.Apresenta na tela, confirmação da realização docadastro.        |
 |6.User pode se logar usando o e-mail e a senha cadastrados.       |      |                        
 
 
 ## CDU002
-Nome : Consultar veterinários  
+Nome : Subir foto 
 Atores :	Usuário  
-Sumário	: O usuário quer consultar algum veterinário próximo a sua localização.  
+Sumário	: O usuário quer subir uma foto de seu pet, para outros users interagirem 
 Regras de Negócio :	N/D  
-Pré-condições	: N/D  
+Pré-condições	: User deve estar logado na aplicação  
 Pós-condição : N/D  
 Pontos de Inclusão :	N/D  
 Pontos de Extensão :	N/D  
@@ -56,38 +56,27 @@ Pontos de Extensão :	N/D
 ### Fluxo Principal
 |                        Ações do Ator	                          |                          Ações do Sistema                         |
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
-|1.Acessa o módulo de consulta.                                   |                                                                   |
-|                                                                 |2.Solicita permissão para utilizar o localizador gps.              |
-|3.Permite que o sistema tenha acesso ao localizador.             |                                                                   |
-|                                                                 |4.Sistema acessa base de dados do Google Maps através de API próprio|
-|                                                                 |5.Mostra todos os veterinários próximos ao user.                   |
-|6.Seleciona algum veterinário para obter mais informações.       |                                                                   |
+|1.Acessa o módulo principal.                                     |                                                                   |
+|2.Clica em "upload"                                              |                                                                   |
+|3.Seleciona a foto que quer subir na aplicação                   |                                                                   |
+|                                                                 |4.A foto aparece na tela e pode ser acessado qualquer hora         |
+
 
 ### Fluxo Alternativo #1
-|                         Ações do Ator	                           |                          Ações do Sistema                         |
--------------------------------------------------------------------|--------------------------------------------------------------------
-|1.Acessa o módulo de consulta.                                    |                                                                   |
-|                                                                  |2.Solicita permissão para utilizar o localizador gps.              |
-|3.Recusa o acesso do localizador.                                 |                                                                   |
-|                                                                  |4.Pede ao usuario para que entre com um endereço                   |
-|5. Digita o endereço.                                             |                                                                   |
-|                                                                  |6.Sistema acessa base de dados do Google Maps através de API próprio  |                                                                  |7.Mostra todos os veterinários próximos ao user.                   |
-|8.Seleciona algum veterinário para obter mais informações.        |                                                                   |
+|                        Ações do Ator	                          |                          Ações do Sistema                         |
+|-----------------------------------------------------------------|-------------------------------------------------------------------|
+|1.Acessa o módulo principal.                                     |                                                                   |
+|2.Clica em "upload"                                              |                                                                   |
+|3.Seleciona a foto que quer subir na aplicação mas cancela       |                                                                   |
+|                                                                 |4.Volta para a tela da aplicação                                   |
 
 ### Fluxo Alternativo #2  
-|                         Ações do Ator	                     |                          Ações do Sistema                         |
--------------------------------------------------------------|--------------------------------------------------------------------
-|1.Acessa o módulo de consulta.                              |                                                                   |
-|                                                            |2.Solicita permissão para utilizar o localizador gps.              |
-|3.Recusa o acesso do localizador.                           |                                                                   |
-|                                                            |4.Pede ao usuario para que entre com um endereço                   |
-|5. Digita um endereço invalido                              |                                                                   |
-|                                                            |6.Sistema acessa base de dados do Google Maps através de API próprio.
-|                                                            |7. Informa que o endereço é invalido, pede para digitar novamente.         |8. Digita um endereço valido                                |                                                                    |
-|                                                            |9.Sistema acessa base de dados do Google Maps através de API próprio.|
-|                                                            | 10. Mostra todos os veterinários próximos ao user.                 |
-| 11.Seleciona algum veterinário para obter mais informações.|                                                                    |
-
+|                        Ações do Ator	                          |                          Ações do Sistema                         |
+|-----------------------------------------------------------------|-------------------------------------------------------------------|
+|1.Acessa o módulo principal.                                     |                                                                   |
+|2.Clica em "upload"                                              |                                                                   |
+|3.Seleciona um arquivo que não é formato padrão de imagem        |                                                                   |
+|                                                                 |4.Mostra erro                                                      |
 
 ## CDU003
 
