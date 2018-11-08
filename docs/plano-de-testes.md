@@ -30,7 +30,8 @@
 |PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
 | | 2.Clique no ícone de "câmera" | 
 | | 3.Selecione uma foto |
-| | 4.Clique em "selecionar" |
+| | 4.Insira um título |
+| | 5.Clique em "publicar" |
 |CRITÉRIOS DE ÊXITO:| A foto selecionada deve aparecer no feed |
 |STATUS: | Passou/Falhou  |
 |FEEDBACK: |   |  
@@ -42,7 +43,7 @@
 | | 2.Clique no ícone de "câmera" | 
 | | 3.Selecione uma foto |
 | | 4.Clique em cancelar |
-|CRITÉRIOS DE ÊXITO:| A tela do feed deve aparecer com a foto subida|
+|CRITÉRIOS DE ÊXITO:| A tela do feed deve aparecer SEM a foto |
 |STATUS: | Passou/Falhou  |   
 |FEEDBACK: |   |  
 
