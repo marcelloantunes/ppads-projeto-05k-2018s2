@@ -1,28 +1,64 @@
 ### PLANO DE TESTES
 
-| #CDU0001 - Fluxo Principal:  |  # Realizar Acesso ao Petgram    |                                                                     
+| # CDU0001 - Realizar Cadastro ao Petgram  | Fluxo Principal |                                                                   
 |  -------------|--------------- |            
-|OBJETIVO DO TESTE:|	Verificar se o usuário consegue efetuar login                                             |                         
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue realizar cadastro |                         
 |PROCEDIMENTOS: | 1.Acessar a página do Petgram |
-| | 2.No campo endereço, digite:http://ec2-18-231-112-159.sa-east-1.compute.amazonaws.com |
-| | 3.Insira seu login e senha já cadastrados |
-| | 4.Digite o login | 
-| |5.Digite a senha |
-| |6.Clique em entrar   | 
-|CRITÉRIOS DE ÊXITO:| Entra na tela de feed da aplicação |
-|STATUS: | Passou/Falhou  |                                                        
+| | 2.Clique para realizar cadastro |
+| | 3.Digite o login a ser cadastrado | 
+| | 4.Digite a senha a ser cadastrado |
+| | 5.Clique em concluir   | 
+|CRITÉRIOS DE ÊXITO:| Mensagem do sistema de cadastro realizado com sucesso e ser possível logar na aplicação |
+|STATUS: | Passou/Falhou  |    
 
+| # CDU0001 - Realizar Cadastro ao Petgram  | Fluxo de Exceção |                                                                    
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue realizar cadastro com dados inválidos |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram |
+| | 2.Clique para realizar cadastro |
+| | 3.Digite o login a ser cadastrado com caracteres especiais | 
+| | 4.Digite a senha a ser cadastrado |
+| | 5.Clique em concluir   | 
+|CRITÉRIOS DE ÊXITO:| Mensagem do sistema de erro |
+|STATUS: | Passou/Falhou  |    
 
- #CASO NO	02:   –  #Pesquisar Veterinarios                                                                                              
--------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                           |
-|OBJETIVO DO TESTE:	Verificar se o usuário consegue pesquisar veterinarios proximos a ele atraves da API Google.                          |
-|                                                                                                                                         |
-|                                                                                                                                         |
-|PASSOS: |                                                                                                                                | 
-|                      1.Acessar a página do Petgram                                                                                      |
-|                      Menu iniciar > Programas > Navegador.                                                                              |
-|                      2.	No campo endereço, digite:http://ec2-18-231-112-159.sa-east-1.compute.amazonaws.com                             |
-|                      3.	Selecione a aba "Procurar veterinarios"                                                                         |  |                      4. Escolher entre habilitar GPS ou digitar endereço                                                                | 
-|                                                                                                                                         | 
-|                                                                                                                                         |
-|CRITÉRIOS DE ÊXITO:	             API estar importada/funcionando corretamente.                                                           |                                       
+| #CDU0002 - Subir foto no feed:  |  Fluxo Principal |                                                                   
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue subir foto de seus pets |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Clique no ícone de "câmera" | 
+| | 3.Selecione uma foto |
+| | 4.Clique em "selecionar" |
+|CRITÉRIOS DE ÊXITO:| A foto selecionada deve aparecer no feed |
+|STATUS: | Passou/Falhou  |
+
+| #CDU0002 - Subir foto no feed:  | Fluxo Alternativo#01 |                                                                  
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue cancelar o subimento da foto |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Clique no ícone de "câmera" | 
+| | 3.Selecione uma foto |
+| | 4.Clique em cancelar |
+|CRITÉRIOS DE ÊXITO:| A tela do feed deve aparecer com a foto subida|
+|STATUS: | Passou/Falhou  |   
+
+| #CDU0002 - Subir foto no feed:  | Fluxo Alternativo#02 |                                                                    
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue subir foto fora do formato de imagem |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Clique no ícone de "câmera" | 
+| | 3.Selecione uma arquivo sem ser imagem |
+| | 4.Clique em "selecionar" |
+|CRITÉRIOS DE ÊXITO:| Nada deve acontecer |
+|STATUS: | Passou/Falhou  |   
+
+| #CDU0003 - Interagir na foto | Fluxo Principal |                                                                   
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue comentar na foto |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Selecione em comentar em alguma foto da feed | 
+| | 3.Digite qualquer comentário |
+| | 4.Clique em "postar" |
+|CRITÉRIOS DE ÊXITO:| O comentário deve aparecer embaixo da foto comentada |
+|STATUS: | Passou/Falhou  |
+
