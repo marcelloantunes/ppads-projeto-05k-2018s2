@@ -57,7 +57,7 @@ Pontos de Extensão :	N/D
 |                        Ações do Ator	                          |                          Ações do Sistema                         |
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
 |1.Acessa o módulo principal.                                     |                                                                   |
-|2.Clica em "upload"                                              |                                                                   |
+|2.Clica no ícone "câmera"                                        |                                                                   |
 |3.Seleciona a foto que quer subir na aplicação                   |                                                                   |
 |                                                                 |4.A foto aparece na tela e pode ser acessado qualquer hora         |
 
@@ -66,7 +66,7 @@ Pontos de Extensão :	N/D
 |                        Ações do Ator	                          |                          Ações do Sistema                         |
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
 |1.Acessa o módulo principal.                                     |                                                                   |
-|2.Clica em "upload"                                              |                                                                   |
+|2.Clica no ícone "câmera"                                        |                                                                   |
 |3.Seleciona a foto que quer subir na aplicação mas cancela       |                                                                   |
 |                                                                 |4.Volta para a tela da aplicação                                   |
 
@@ -74,7 +74,7 @@ Pontos de Extensão :	N/D
 |                        Ações do Ator	                          |                          Ações do Sistema                         |
 |-----------------------------------------------------------------|-------------------------------------------------------------------|
 |1.Acessa o módulo principal.                                     |                                                                   |
-|2.Clica em "upload"                                              |                                                                   |
+|2.Clica no ícone "câmera"                                        |                                                                   |
 |3.Seleciona um arquivo que não é formato padrão de imagem        |                                                                   |
 |                                                                 |4.Mostra erro                                                      |
 
@@ -99,3 +99,21 @@ Pontos de Extensão :	N/D
 |5.Interage comentando na foto.                                    |                                              |
 |                                                                  |6.Salva o comentário na foto e deixar visível |
 
+## CDU004
+Nome : Consultar veterinários  
+Atores :	Usuário  
+Sumário	: O usuário quer consultar algum veterinário próximo a sua localização.  
+Regras de Negócio :	N/D  
+Pré-condições	: User deve estar logado na aplicação  
+Pós-condição : N/D  
+Pontos de Inclusão :	N/D  
+Pontos de Extensão :	N/D  
+ ### Fluxo Principal
+|                        Ações do Ator	                          |                          Ações do Sistema                         |
+|-----------------------------------------------------------------|-------------------------------------------------------------------|
+|1.Acessa o módulo de consulta.                                   |                                                                   |
+|                                                                 |2.Solicita permissão para utilizar o localizador gps.              |
+|3.Permite que o sistema tenha acesso ao localizador.             |                                                                   |
+|                                                                 |4.Sistema acessa base de dados do Google Maps através de API próprio|
+|                                                                 |5.Mostra todos os veterinários próximos ao user.                   |
+|6.Seleciona algum veterinário para obter mais informações.       |                                                                   |
