@@ -94,8 +94,6 @@ Pontos de Extensão :	N/D
 |------------------------------------------------------------------|----------------------------------------------|
 |1.Acessa o módulo de Petgram.                                     |                                              |
 |                                                                  |2.Mostra um feed com fotos de pets            |
-|3.Interage dando like.                                            |                                              |
-|                                                                  |4.Salva o like na foto.                       |
 |5.Interage comentando na foto.                                    |                                              |
 |                                                                  |6.Salva o comentário na foto e deixar visível |
 
