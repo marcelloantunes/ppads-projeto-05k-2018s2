@@ -10,6 +10,7 @@
 | | 5.Clique em concluir   | 
 |CRITÉRIOS DE ÊXITO:| Mensagem do sistema de cadastro realizado com sucesso e ser possível logar na aplicação |
 |STATUS: | Passou/Falhou  |    
+|FEEDBACK: |   |  
 
 | # CDU0001 - Realizar Cadastro ao Petgram  | Fluxo de Exceção |                                                                    
 |  -------------|--------------- |            
@@ -21,6 +22,7 @@
 | | 5.Clique em concluir   | 
 |CRITÉRIOS DE ÊXITO:| Mensagem do sistema de erro |
 |STATUS: | Passou/Falhou  |    
+|FEEDBACK: |   |  
 
 | #CDU0002 - Subir foto no feed:  |  Fluxo Principal |                                                                   
 |  -------------|--------------- |            
@@ -31,6 +33,7 @@
 | | 4.Clique em "selecionar" |
 |CRITÉRIOS DE ÊXITO:| A foto selecionada deve aparecer no feed |
 |STATUS: | Passou/Falhou  |
+|FEEDBACK: |   |  
 
 | #CDU0002 - Subir foto no feed:  | Fluxo Alternativo#01 |                                                                  
 |  -------------|--------------- |            
@@ -41,6 +44,7 @@
 | | 4.Clique em cancelar |
 |CRITÉRIOS DE ÊXITO:| A tela do feed deve aparecer com a foto subida|
 |STATUS: | Passou/Falhou  |   
+|FEEDBACK: |   |  
 
 | #CDU0002 - Subir foto no feed:  | Fluxo Alternativo#02 |                                                                    
 |  -------------|--------------- |            
@@ -50,7 +54,8 @@
 | | 3.Selecione uma arquivo sem ser imagem |
 | | 4.Clique em "selecionar" |
 |CRITÉRIOS DE ÊXITO:| Nada deve acontecer |
-|STATUS: | Passou/Falhou  |   
+|STATUS: | Passou/Falhou  |
+|FEEDBACK: |   |  
 
 | #CDU0003 - Interagir na foto | Fluxo Principal |                                                                   
 |  -------------|--------------- |            
@@ -61,4 +66,4 @@
 | | 4.Clique em "postar" |
 |CRITÉRIOS DE ÊXITO:| O comentário deve aparecer embaixo da foto comentada |
 |STATUS: | Passou/Falhou  |
-
+|FEEDBACK: |   |  
