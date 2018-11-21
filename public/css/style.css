@@ -399,7 +399,7 @@ section {
 nav {
   background: #333;
   overflow: auto;
-  padding: 0em 13em;
+  padding: 0em 12em;
   position: relative;
   z-index: 2;
 }
@@ -407,7 +407,7 @@ nav {
 
 nav#small {
   background: #FAFAFA;
-  padding: 0em 13em;
+  padding: 0em 12em;
   position: fixed;
   box-sizing: border-box;
   width: 100%;
