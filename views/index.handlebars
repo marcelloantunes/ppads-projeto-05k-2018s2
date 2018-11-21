@@ -1,6 +1,329 @@
- <h2 class="page-header">Dashboard</h2>
-<<<<<<< HEAD
-<p>Bem vindo ao dashboard</p>  
-=======
-<p>Bem-vindo ao dashboard</p>  
->>>>>>> front
+<header>
+  <nav>
+    <div class="col-md-10 offset-md-1">
+      <div class="header-content" style="display: flex; max-height: 120px;">
+        <img src="images/logo.png" style="width: 20%; margin: auto;">
+        <ul style="margin: auto;">
+          <li>
+            <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 3.5em;"></i></a>
+          </li>
+          <li>
+            <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 3.5em;"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav id="small">
+    <div class="col-md-10 offset-md-1">
+      <div class="header-content" style="display: flex; max-height: 120px;">
+        <img src="images/logo.png" style="width: 20%; margin: auto;">
+        <ul style="margin: auto;">
+          <li>
+            <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 3.5em;"></i></a>
+          </li>
+          <li>
+            <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 3.5em;"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{{!-- <div id="map"></div> --}}
+
+
+<section id="container_timeline"></section> 
+
+<div class="container" style="display:none" id="container_form">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card" style="margin-top: 5em;">
+        <div class="card-header">Publicar uma foto</div>
+        <div class="card-body">
+
+          {{!-- <div class="form-group">
+            <div class="input-group input-file">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+              </div>
+              <input id="arquivo" name="arquivo" class="form-control" placeholder='Escolher imagem...' />
+            </div>
+          </div> --}}
+
+           <div class="form-group">
+            <input type="file" name="arquivo" id="arquivo" class="form-control" placeholder='Escolher imagem...'>
+          </div>    
+          <div class="form-group">
+            <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Título" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-danger" id="btn-cancelar-publicacao">Cancelar</button>
+            <button class="btn btn-success" id="btn-publicar">Publicar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Veterinários</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="map"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  
+  $(document).ready(function(){
+  function loadPosts(){
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api");
+
+    xhr.onload = function(){
+        if(xhr.status === 200){
+          var data = $.parseJSON(xhr.responseText).reverse();
+          for(i = 0; i < data.length; i++){
+            $('#container_timeline').append(
+              '<div class="insta fade-scrol">'+
+                '<div class="top-insta">'+
+                  '<i class="fa fa-picture-o" style="font-size: 1.2em; margin-top: 0.2em;" aria-hidden="true"></i>'+
+                  '<a href="" class="user">'+
+                    data[i].titulo+
+                  '</a>'+
+                '</div>'+
+                '<div class="post">'+
+                  '<div class="overlay"><span></span></div>'+
+                  '<img src="http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/imagens/' + data[i].url_imagem + '" />'+
+                '</div>'+
+                '<div class="footer">'+
+                  '<div class="react">'+
+                    '<a href="#" role="button"><span class="love"></span></a>'+
+                    '<a href="#" role="button"><span class="comment"></span></a>'+
+                  '</div>'+
+                  
+                  '<div id="comentarios_' + data[i]._id + '" class="caption">'+
+                    '<a href="#">{{user.username}}</a>'+
+                    '<span>'+ 
+                      'TROCAR'+
+                    '</span>'+
+                  '</div>'+
+                  
+                  '<div class="comment-section">'+
+                    '<input id="postagem_' + data[i]._id + '" class="form-control input_comentario" type="text" placeholder="Adicione um Comentário...">'+
+                  '</div>'+
+                '</div>'+
+
+                '<div class="comentarios" id="comentarios_' + data[i]._id + '"></div>'+
+                '<div class="comentar">'+
+                  '<button class="btn btn-default btn_postagem" value="' + data[i]._id + '" type="button">Comentar</button>'+
+                '</div>'+
+
+
+
+              '</div>'
+              
+            );
+            
+            if(data[i].comentarios != undefined){
+              var comentarios = data[i].comentarios;
+
+              for(j = 0; j < comentarios.length; j++){
+                $('#comentarios_' + data[i]._id).append(
+                  '<div class="txt_comentario">'+
+                    '<a href="#">{{user.username}}</a>'+
+                    '<span>'+ comentarios[j].comentario+ '</span>'+
+                  '</div>'
+                );
+              }
+            }
+
+          }
+
+          $('.btn_postagem').click(function(){
+            var id = this.value;
+            var id_input_comentario = 'postagem_' + id;
+            var comentario = $('#'+id_input_comentario).val();
+            var xhr = new XMLHttpRequest();
+            xhr.open('PUT', 'http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api/' + id);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function(){
+              if(xhr.status === 200){
+                document.location.reload(true);
+              }
+            };
+            xhr.send(JSON.stringify({ comentario : comentario }));
+          });
+
+        }
+      }
+      xhr.send();
+    }
+
+    loadPosts();
+
+    $('.btn_incluir').click(function(){
+      $('#container_timeline').hide();
+      $('#container_form').show();
+    });
+
+    $('.buttonVet').click(function(){ 
+      $("#myModal").modal('show');
+    });
+
+    $('#btn-cancelar-publicacao').click(function(){
+      $('#container_timeline').show();
+      $('#container_form').hide();
+      return false;
+    });
+
+    $('#btn-publicar').click(function(){
+      var formData = new FormData();
+      var arquivo = document.getElementById('arquivo').files[0];
+      var titulo = document.getElementById('titulo').value;
+      formData.append("arquivo", arquivo);
+      formData.append("titulo", titulo);
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+          var resposta = xhr.responseText;
+          document.getElementById('mensagem').innerHTML = resposta;
+        }
+      }
+      xhr.open("POST", "http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api");
+      xhr.send(formData);
+      setTimeout(function(){ 
+        document.location.reload(true);
+      }, 500);
+    });
+
+    function bs_input_file() {
+      $(".input-file").before(
+        function() {
+          if ( ! $(this).prev().hasClass('input-ghost') ) {
+            var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+            element.attr("name",$(this).attr("name"));
+            element.change(function(){
+              element.next(element).find('input').val((element.val()).split('\\').pop());
+            });
+            $(this).find("button.btn-choose").click(function(){
+              element.click();
+            });
+            $(this).find("button.btn-reset").click(function(){
+              element.val(null);
+              $(this).parents(".input-file").find('input').val('');
+            });
+            $(this).find('input').css("cursor","pointer");
+            $(this).find('input').mousedown(function() {
+              $(this).parents('.input-file').prev().click();
+              return false;
+            });
+            return element;
+          }
+        }
+      );
+    }
+
+    $(function() {
+      bs_input_file();
+    });
+
+ 
+  var shortestDistance = function() {
+  
+  var directionsDisplay;
+  var directionsService = new google.maps.DirectionsService();
+  var map;
+  var size = 0;
+  var currentPosition;
+
+  // Call this upon page load to set everything in motion!
+  function initialize(currentLat, currentLng) {
+
+    currentPosition = new google.maps.LatLng(currentLat, currentLng);
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var mapOptions = {
+      zoom: 15,
+      center: currentPosition
+    };
+
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    directionsDisplay.setMap(map);
+
+    var request = {
+      location: currentPosition,
+      radius: '500',
+      query: 'veterinário',
+    };
+
+    infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+
+    function callback(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          createMarker(results[i]);
+        }
+      }
+    }
+
+    function createMarker(place) {
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+
+      var contentString = '<div>'+
+      '<p style="font-weight: bold; margin: 5px 0;">'+
+      place.name +
+      '</p>'+
+      '<span>'+
+      place.formatted_address+
+      '</span>'+
+      '</div>';
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(contentString);
+        infowindow.open(map, this);
+      });
+    }
+
+    var marker = new google.maps.Marker({
+      position: currentPosition,
+      map: map,
+      title: 'Localização',
+      icon: 'https://maps.google.com/mapfiles/ms/icons/orange.png'
+    });
+
+  }
+
+  // Expose the initialize function publicly as "init".
+  return {
+    init: initialize
+  };
+}();
+
+  setTimeout(function(){ 
+    google.maps.event.addDomListener(window, 'load', shortestDistance.init(-23.5479163,-46.6499536));
+  }, 500);
+
+   
+});
+</script>

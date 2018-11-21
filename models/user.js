@@ -13,9 +13,9 @@ var UserSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	name: {
+	/* name: {
 		type: String
-	},
+	}, */
 	petName: {
 		type: String
 	},

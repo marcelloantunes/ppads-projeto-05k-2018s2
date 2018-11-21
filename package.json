@@ -10,6 +10,7 @@
   "author": "Marcello",
   "license": "ISC",
   "dependencies": {
+    "@google/maps": "^0.5.5",
     "bcryptjs": "*",
     "body-parser": "*",
     "connect-flash": "*",
@@ -21,6 +22,7 @@
     "express-validator": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "nodemon": "^1.18.6",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*"
