@@ -1,80 +1,82 @@
-<div class="container2">
-  <div class="col-12 col-md-12" style="padding: 0">
-    <div class="backbox">
-      <div class="loginMsg">
-        <div class="textcontent">
-          <p class="title">Não tem uma conta?</p>
-          <p>Cadastre-se e comece a usar.</p>
-          <button id="switch1" class="loginButton">Cadastrar</button>
+<div class="background" >
+  <div class="container2">
+    <div class="col-12 col-md-12" style="padding: 0">
+      <div class="backbox">
+        <div class="loginMsg">
+          <div class="textcontent">
+            <p class="title">Não tem uma conta?</p>
+            <p>Cadastre-se e comece a usar.</p>
+            <button id="switch1" class="loginButton">Cadastrar</button>
+          </div>
+        </div>
+        <div class="signupMsg visibility">
+          <div class="textcontent">
+            <p class="title">Já tem uma conta?</p>
+            <p>Faça o login para entrar em seu perfil.</p>
+            <button id="switch2">Entrar</button>
+          </div>
         </div>
       </div>
-      <div class="signupMsg visibility">
-        <div class="textcontent">
-          <p class="title">Já tem uma conta?</p>
-          <p>Faça o login para entrar em seu perfil.</p>
-          <button id="switch2">Entrar</button>
-        </div>
+      <!-- backbox -->
+
+      <div class="frontbox">
+        <form method="post" action="/users/login">
+          <div class="login">
+            <h2>LOGIN</h2>
+            <div class="inputbox">
+              <input type="text" class="form-control" placeholder="Usuário" name="username">
+              <input type="password" class="form-control" placeholder="Senha" name="password">
+            </div>
+            {{#if success_msg}}
+              <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}}
+            {{#if error}}
+              <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+            {{#if errors}}
+              {{#each errors}}
+                <p class="alert alert-danger" style="padding: 5px; margin-bottom: 10px;">{{msg}}</p>
+              {{/each}}
+            {{/if}}
+            <button type="submit" class="btn btn-default">Entrar</button>
+          </div>
+        </form>
+        <form method="post" action="/users/register">
+          <div class="signup hide">
+            <h2>CADASTRO</h2>
+            <div class="inputbox">
+              <input type="text" class="form-control" placeholder="Nome" name="name">
+              <input type="text" class="form-control" placeholder="Usuário" name="username">
+              {{#if user}}
+                <div class="invalid-feedback">Por favor informe nome de usuário.</div>
+              {{/if}}
+              <input type="email" class="form-control" placeholder="E-mail" name="email">
+              {{#if mail}}
+                  <div class="invalid-feedback">E-mail já cadastrado</div>
+              {{/if}}
+              <input type="password" class="form-control" placeholder="Senha" name="password">
+              <input type="password" class="form-control" placeholder="Confirmar Senha" name="password2">
+              {{!-- <input type="text" class="form-control" placeholder="Nome do Pet" name="petName">
+              <select class="form-control" name="petGroup">
+                <option>Cachorro</option>
+                <option>Gato</option>
+                <option>Pássaro</option>
+                <option>Peixe</option>
+                <option>Outro</option>
+              </select> --}}
+            </div>
+            {{!-- {{#if errors}}
+              {{#each errors}}
+                <div class="alert alert-danger">{{error_msg}}</div>
+              {{/each}}
+            {{/if}} --}}
+
+            <button class="loginButton" type="submit">Cadastrar</button>
+          </div>
+        </form>
       </div>
+      <!-- frontbox -->
     </div>
-    <!-- backbox -->
-
-    <div class="frontbox">
-      <form method="post" action="/users/login">
-        <div class="login">
-          <h2>LOGIN</h2>
-          <div class="inputbox">
-            <input type="text" class="form-control" placeholder="Usuário" name="username">
-            <input type="password" class="form-control" placeholder="Senha" name="password">
-          </div>
-          {{#if success_msg}}
-            <div class="alert alert-success">{{success_msg}}</div>
-          {{/if}}
-          {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-          {{/if}}
-          {{#if errors}}
-            {{#each errors}}
-              <p class="alert alert-danger" style="padding: 5px; margin-bottom: 10px;">{{msg}}</p>
-            {{/each}}
-          {{/if}}
-          <button type="submit" class="btn btn-default">Entrar</button>
-        </div>
-      </form>
-      <form method="post" action="/users/register">
-        <div class="signup hide">
-          <h2>CADASTRO</h2>
-          <div class="inputbox">
-            <input type="text" class="form-control" placeholder="Nome" name="name">
-            <input type="text" class="form-control" placeholder="Usuário" name="username">
-            {{#if user}}
-              <div class="invalid-feedback">Por favor informe nome de usuário.</div>
-            {{/if}}
-            <input type="email" class="form-control" placeholder="E-mail" name="email">
-            {{#if mail}}
-                <div class="invalid-feedback">E-mail já cadastrado</div>
-            {{/if}}
-            <input type="password" class="form-control" placeholder="Senha" name="password">
-            <input type="password" class="form-control" placeholder="Confirmar Senha" name="password2">
-            {{!-- <input type="text" class="form-control" placeholder="Nome do Pet" name="petName">
-            <select class="form-control" name="petGroup">
-              <option>Cachorro</option>
-              <option>Gato</option>
-              <option>Pássaro</option>
-              <option>Peixe</option>
-              <option>Outro</option>
-            </select> --}}
-          </div>
-          {{!-- {{#if errors}}
-            {{#each errors}}
-              <div class="alert alert-danger">{{error_msg}}</div>
-            {{/each}}
-          {{/if}} --}}
-
-          <button class="loginButton" type="submit">Cadastrar</button>
-        </div>
-      </form>
-    </div>
-    <!-- frontbox -->
   </div>
 </div>
 

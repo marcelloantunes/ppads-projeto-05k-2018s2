@@ -1,4 +1,4 @@
-<div class="background" style="background-color: #fafafa;">
+
   <header>
   <nav>
     <div class="col-md-10 offset-md-1">
@@ -32,9 +32,6 @@
   </nav>
 </header>
 
-{{!-- <div id="map"></div> --}}
-
-
 <section id="container_timeline"></section> 
 
 <div class="container" style="display:none" id="container_form">
@@ -43,21 +40,14 @@
       <div class="card" style="margin-top: 5em;">
         <div class="card-header">Publicar uma foto</div>
         <div class="card-body">
-
-          {{!-- <div class="form-group">
-            <div class="input-group input-file">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-              </div>
-              <input id="arquivo" name="arquivo" class="form-control" placeholder='Escolher imagem...' />
-            </div>
-          </div> --}}
-
            <div class="form-group">
             <input type="file" name="arquivo" id="arquivo" class="form-control" placeholder='Escolher imagem...'>
           </div>    
           <div class="form-group">
             <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Título" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição" autocomplete="off">
           </div>
           <div class="form-group">
             <button class="btn btn-danger" id="btn-cancelar-publicacao">Cancelar</button>
@@ -88,7 +78,7 @@
   </div>
 </div>
 
-</div>
+
 
 
 
@@ -122,34 +112,35 @@
                   '</div>'+
                   
                   '<div id="comentarios_' + data[i]._id + '" class="caption">'+
-                    '<a href="#">{{user.username}}</a>'+
-                    '<span>'+ 
-                      'TROCAR'+
+                    '<a href="#"></a>'+
+                    '<span style="font-size: 14px">'+ 
+                      data[i].descricao+
                     '</span>'+
                   '</div>'+
                   
                   '<div class="comment-section">'+
-                    '<input id="postagem_' + data[i]._id + '" class="form-control input_comentario" type="text" placeholder="Adicione um Comentário...">'+
+                    '<div style="width: 80%; float:left">'+
+                      '<input id="postagem_' + data[i]._id + '" class="form-control input_comentario" type="text" placeholder="Adicione um Comentário...">'+
+                    '</div>'+
+                    '<div class="comentar">'+
+                      '<button class="btn btn-default btn_postagem" style="background-color: #FF9C64; color: #fff;" value="' + data[i]._id + '" type="button">Comentar</button>'+
+                    '</div>'+
                   '</div>'+
                 '</div>'+
 
                 '<div class="comentarios" id="comentarios_' + data[i]._id + '"></div>'+
-                '<div class="comentar">'+
-                  '<button class="btn btn-default btn_postagem" value="' + data[i]._id + '" type="button">Comentar</button>'+
-                '</div>'+
-
-
+                
 
               '</div>'
-              
+
             );
-            
+
             if(data[i].comentarios != undefined){
               var comentarios = data[i].comentarios;
 
               for(j = 0; j < comentarios.length; j++){
                 $('#comentarios_' + data[i]._id).append(
-                  '<div class="txt_comentario">'+
+                  '<div class="txt_comentario" style="margin: 3px;">'+
                     '<a href="#">{{user.username}}</a>'+
                     '<span>'+ comentarios[j].comentario+ '</span>'+
                   '</div>'
@@ -200,8 +191,10 @@
       var formData = new FormData();
       var arquivo = document.getElementById('arquivo').files[0];
       var titulo = document.getElementById('titulo').value;
+      var descricao = document.getElementById('descricao').value;
       formData.append("arquivo", arquivo);
       formData.append("titulo", titulo);
+      formData.append("descricao", descricao);
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function(){
         if(xhr.readyState == 4){
