@@ -68,3 +68,15 @@
 |CRITÉRIOS DE ÊXITO:| O comentário deve aparecer embaixo da foto comentada |
 |STATUS: | Passou/Falhou  |
 |FEEDBACK: |   |  
+
+
+| #CDU0004 - Consultor veterinário | Fluxo Principal |                                                                   
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue ver a localização de veterinários próximos a ele |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Selecione o módulo de mapa | 
+| | 3.O mapa irá abrir |
+|CRITÉRIOS DE ÊXITO:| Sistema deve abrir um mapa e localização de veterinários próximos |
+|STATUS: | Passou/Falhou  |
+|FEEDBACK: |   |  
+
