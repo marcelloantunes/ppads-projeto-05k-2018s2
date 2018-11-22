@@ -564,10 +564,3 @@ div#content h2 {
   height: 100%;
   z-index: 1;
 }
-
-input {
-  border-radius: 20px;
-}
-.form-group input {
-  border-radius: 20px;
-}
