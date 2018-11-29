@@ -554,6 +554,10 @@ div#content h2 {
   background-position: -2800px 0;
 }
 
+#heart-2 {
+  background-position: -2800px 0 !important;
+}
+
 [type="checkbox"] {
   opacity: 0;
   cursor: pointer;

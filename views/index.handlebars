@@ -87,7 +87,7 @@
   $(document).ready(function(){
   function loadPosts(){
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api");
+  xhr.open("GET", "http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api");
 
     xhr.onload = function(){
         if(xhr.status === 200){
@@ -103,14 +103,13 @@
                 '</div>'+
                 '<div class="post">'+
                   '<div class="overlay"><span></span></div>'+
-                  '<img src="http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/imagens/' + data[i].url_imagem + '" />'+
+                  '<img src="http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/imagens/' + data[i].url_imagem + '" />'+
                 '</div>'+
                 '<div class="footer">'+
                   '<div class="tw-heart-box" style="margin: -44px -32px;">'+
                     '<input type="checkbox" name="name" value="">'+
                     '<span class="tw-heart"></span>'+
-                  '</div>'+
-                  
+                  '</div>'+                  
                   '<div id="comentarios_' + data[i]._id + '" class="caption">'+
                     '<a href="#"></a>'+
                     '<span style="font-size: 14px">'+ 
@@ -141,8 +140,8 @@
               for(j = 0; j < comentarios.length; j++){
                 $('#comentarios_' + data[i]._id).append(
                   '<div class="txt_comentario" style="margin: 3px;">'+
-                    '<a href="#">{{user.username}}</a>'+
-                    '<span>'+ comentarios[j].comentario+ '</span>'+
+                    '<a href="#">'+ comentarios[j].comentario.user+ '</a>'+
+                    '<span>'+ comentarios[j].comentario.content+ '</span>'+
                   '</div>'
                 );
               }
@@ -153,9 +152,13 @@
           $('.btn_postagem').click(function(){
             var id = this.value;
             var id_input_comentario = 'postagem_' + id;
-            var comentario = $('#'+id_input_comentario).val();
+            var userName = '{{user.username}}';
+            var comentario = {
+              content: $('#'+id_input_comentario).val(),
+              user: userName
+            }
             var xhr = new XMLHttpRequest();
-            xhr.open('PUT', 'http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api/' + id);
+            xhr.open('PUT', 'http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api/' + id);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = function(){
               if(xhr.status === 200){
@@ -202,7 +205,7 @@
           document.getElementById('mensagem').innerHTML = resposta;
         }
       }
-      xhr.open("POST", "http://ec2-52-67-144-118.sa-east-1.compute.amazonaws.com:8080/api");
+      xhr.open("POST", "http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api");
       xhr.send(formData);
       setTimeout(function(){ 
         document.location.reload(true);
