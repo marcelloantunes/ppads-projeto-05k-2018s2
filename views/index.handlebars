@@ -1,36 +1,48 @@
-
-  <header>
+<header>
   <nav>
     <div class="col-md-10 offset-md-1">
-      <div class="header-content" style="display: flex; max-height: 120px;">
-        <img src="images/logo.png" style="width: 11em; margin: auto;">
+      <div class="header-content" style="display: flex; max-height: 100px;">
+        <img src="images/logo.png" style="width: 10em; margin: auto;">
         <ul style="margin: auto;">
           <li>
-            <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 4.5em;"></i></a>
+            <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 3.5em;"></i></a>
           </li>
           <li>
-            <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 4.5em;"></i></a>
+            <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 3.5em;"></i></a>
+          </li>
+          <li>
+            <form method="get" action="/users/logout">
+              <button type="submit" class="" href="#">
+                <a class="" href="#"><i class="fa fa-sign-out" style="font-size: 3.5em;"></i></a>
+                </button>
+            </form>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <nav id="small">
-    <div class="col-md-10 offset-md-1">
-      <div class="header-content" style="display: flex; max-height: 120px;">
-        <img src="images/logo.png" style="width: 11em; margin: auto;">
-        <ul style="margin: auto;">
-          <li>
-            <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 4.5em;"></i></a>
-          </li>
-          <li>
-            <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 4.5em;"></i></a>
-          </li>
-        </ul>
-      </div>
+    <div class="header-content" style="display: flex; max-height: 100px;">
+      <img src="images/logo.png" style="width: 10em; margin: auto;">
+      <ul style="margin: auto;">
+        <li>
+          <a class="btn_incluir" href="#"><i class="fa fa-camera" style="font-size: 3.5em;"></i></a>
+        </li>
+        <li>
+          <a class="buttonVet" href="#"><i class="fa fa-paw" style="font-size: 3.5em;"></i></a>
+        </li>
+        <li>
+          <form method="get" action="/users/logout">
+            <button type="submit" class="" href="#">
+              <a class="" href="#"><i class="fa fa-sign-out" style="font-size: 3.5em;"></i></a>
+              </button>
+          </form>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
+
 
 <section id="container_timeline"></section> 
 
@@ -83,16 +95,29 @@
 
 
 <script>
+
+  
   
   $(document).ready(function(){
+
+    
+
   function loadPosts(){
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api");
+  xhr.open("GET", "http://ec2-54-233-208-96.sa-east-1.compute.amazonaws.com:8080/api");
+
+
 
     xhr.onload = function(){
         if(xhr.status === 200){
           var data = $.parseJSON(xhr.responseText).reverse();
           for(i = 0; i < data.length; i++){
+            if (data[i].like == "true") {
+              var checked = "checked";
+            } else {
+              var checked = "unchecked";
+            }
+            
             $('#container_timeline').append(
               '<div class="insta fade-scrol">'+
                 '<div class="top-insta">'+
@@ -102,12 +127,12 @@
                   '</a>'+
                 '</div>'+
                 '<div class="post">'+
-                  '<div class="overlay"><span></span></div>'+
-                  '<img src="http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/imagens/' + data[i].url_imagem + '" />'+
+                  '<div><span></span></div>'+
+                  '<img src="http://ec2-54-233-208-96.sa-east-1.compute.amazonaws.com:8080/imagens/' + data[i].url_imagem + '" />'+
                 '</div>'+
                 '<div class="footer">'+
                   '<div class="tw-heart-box" style="margin: -44px -32px;">'+
-                    '<input type="checkbox" name="name" value="">'+
+                    '<input id="like' + data[i]._id + '"type="checkbox" value="'+ data[i].like + '"'+ checked +'/>'+
                     '<span class="tw-heart"></span>'+
                   '</div>'+                  
                   '<div id="comentarios_' + data[i]._id + '" class="caption">'+
@@ -131,8 +156,10 @@
                 
 
               '</div>'
-
             );
+
+            let inputId = $("#like" + data[i]._id);
+            let likeId = data[i]._id;
 
             if(data[i].comentarios != undefined){
               var comentarios = data[i].comentarios;
@@ -146,7 +173,21 @@
                 );
               }
             }
-
+            
+            $(inputId).change(function(){
+              if ($(inputId).prop('checked') === true) { 
+                $(inputId).val(true);
+              } else { 
+                $(inputId).val(false);
+              }  
+              var like = $(inputId).val();
+              var xhr = new XMLHttpRequest();
+              xhr.open('PUT', 'http://ec2-54-233-208-96.sa-east-1.compute.amazonaws.com:8080/api/like/' + likeId);
+              xhr.setRequestHeader('Content-Type', 'application/json');
+              xhr.send(JSON.stringify({ 
+                like: like
+              }));
+            });
           }
 
           $('.btn_postagem').click(function(){
@@ -158,20 +199,24 @@
               user: userName
             }
             var xhr = new XMLHttpRequest();
-            xhr.open('PUT', 'http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api/' + id);
+            xhr.open('PUT', 'http://ec2-54-233-208-96.sa-east-1.compute.amazonaws.com:8080/api/' + id);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onload = function(){
               if(xhr.status === 200){
                 document.location.reload(true);
               }
             };
-            xhr.send(JSON.stringify({ comentario : comentario }));
+            xhr.send(JSON.stringify({ 
+              comentario : comentario
+            }));
           });
 
         }
       }
       xhr.send();
     }
+
+
 
     loadPosts();
 
@@ -205,7 +250,7 @@
           document.getElementById('mensagem').innerHTML = resposta;
         }
       }
-      xhr.open("POST", "http://ec2-54-232-251-252.sa-east-1.compute.amazonaws.com:8080/api");
+      xhr.open("POST", "http://ec2-54-233-208-96.sa-east-1.compute.amazonaws.com:8080/api");
       xhr.send(formData);
       setTimeout(function(){ 
         document.location.reload(true);
