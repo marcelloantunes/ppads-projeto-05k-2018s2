@@ -69,6 +69,16 @@
 |STATUS: | Passou  |
 |FEEDBACK: |   |  
 
+| #CDU0003 - Interagir na foto | Fluxo Alternativo |                                                                   
+|  -------------|--------------- |            
+|OBJETIVO DO TESTE:|	Verificar se o usuário consegue dar "like" na foto |                         
+|PROCEDIMENTOS: | 1.Acessar a página do Petgram já logado|
+| | 2.Selecione uma foto que agrade o autor | 
+| | 3.Clique no ícono de "like" referente á um coração |
+|CRITÉRIOS DE ÊXITO:| O like deve ficar salvo e evidenciado embaixo da foto |
+|STATUS: | Passou/Falhou |
+|FEEDBACK: |   |  
+
 
 | #CDU0004 - Consultor veterinário | Fluxo Principal |                                                                   
 |  -------------|--------------- |            
